@@ -9,6 +9,7 @@ on:
     workflows: ["Release"]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   docker:
