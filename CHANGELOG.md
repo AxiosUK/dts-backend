@@ -1,5 +1,11 @@
 # dts-backend
 
+## 1.0.2
+
+### Patch Changes
+
+- cf3539d: Updated build-push.yml
+
 ## 1.0.1
 
 ### Patch Changes
