@@ -1,0 +1,19 @@
+services:
+  axios-dts-backend:
+    container_name: axios-dts-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5180:5180"
+    environment:
+      - NODE_ENV=production
+      - DATABASE=mongodb://mongodb:27017/axios-dts-backend
+      - ALLOWED_HOSTS=http://localhost:5173
+      - TRUST_PROXY=true
+      - RATE_LIMIT_MAX=200
+    volumes:
+      - .:/app
+    network_mode: bridge
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

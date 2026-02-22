@@ -1,0 +1,28 @@
+{
+  "name": "dts-backend",
+  "version": "1.0.0",
+  "description": "DTS Backend API for administration and client data.",
+  "license": "ISC",
+  "author": "Axios UK",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "dev",
+    "start": "NODE_ENV=development node server.js",
+    "start:prod": "NODE_ENV=production node server.js",
+    "debug": "ndb server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "mongoose": "^8.19.2",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8"
+  }
+}
