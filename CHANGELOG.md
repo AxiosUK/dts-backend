@@ -1,5 +1,11 @@
 # dts-backend
 
+## 1.0.3
+
+### Patch Changes
+
+- 42db738: Added mongodb to docker-compose.yaml
+
 ## 1.0.2
 
 ### Patch Changes
