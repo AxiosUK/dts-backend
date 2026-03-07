@@ -7,8 +7,20 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
+// Build mongoose connection options. If a DB username/password are provided
+// prefer using those as authentication credentials rather than embedding
+// credentials in the `DATABASE` URI.
+const dbUri = process.env.DATABASE;
+const mongooseOptions = {};
+if (process.env.DATABASE_USERNAME && process.env.DATABASE_PASSWORD) {
+  mongooseOptions.auth = {
+    username: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+  };
+}
+
 mongoose
-  .connect(process.env.DATABASE)
+  .connect(dbUri, mongooseOptions)
   .then(() => {
     console.log("DB connection successful!");
   })
@@ -18,7 +30,8 @@ mongoose
 
 import app from "./app.js";
 
-app.listen(5180, () => {
+// Keep the server reference so we can gracefully shut down on unhandled rejections
+const server = app.listen(5180, () => {
   console.log("API listening on port 5180");
 });
 

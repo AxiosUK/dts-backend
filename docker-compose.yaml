@@ -1,4 +1,14 @@
 services:
+  mongodb:
+    container_name: mongodb
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=axios
+      - MONGO_INITDB_ROOT_PASSWORD=AxiosDemo
+    volumes:
+      - mongodb_data:/data/db
   axios-dts-backend:
     container_name: axios-dts-backend
     build:
@@ -9,11 +19,12 @@ services:
     environment:
       - NODE_ENV=production
       - DATABASE=mongodb://mongodb:27017/axios-dts-backend
+      - DATABASE_USERNAME=axios
+      - DATABASE_PASSWORD=AxiosDemo
       - ALLOWED_HOSTS=http://localhost:5173
       - TRUST_PROXY=true
       - RATE_LIMIT_MAX=200
     volumes:
       - .:/app
-    network_mode: bridge
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+volumes:
+  mongodb_data: {}
