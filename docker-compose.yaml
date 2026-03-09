@@ -1,6 +1,7 @@
 services:
   mongodb:
     container_name: mongodb
+    restart: unless-stopped
     image: mongodb/mongodb-community-server:latest
     ports:
       - "27017:27017"
@@ -12,6 +13,7 @@ services:
   axios-dts-backend:
     container_name: axios-dts-backend
     image: ghrc.io/axios/axios-dts-backend:latest
+    restart: unless-stopped
     ports:
       - "5180:5180"
     environment:
