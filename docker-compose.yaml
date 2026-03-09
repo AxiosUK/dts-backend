@@ -11,20 +11,19 @@ services:
       - mongodb_data:/data/db
   axios-dts-backend:
     container_name: axios-dts-backend
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghrc.io/axios/axios-dts-backend:latest
     ports:
       - "5180:5180"
     environment:
       - NODE_ENV=production
-      - DATABASE=mongodb://mongodb:27017/axios-dts-backend
+      - DATABASE=mongodb://mongodb:27017/axios-dts-backend?authSource=admin
       - DATABASE_USERNAME=axios
       - DATABASE_PASSWORD=AxiosDemo
       - ALLOWED_HOSTS=http://localhost:5173
       - TRUST_PROXY=true
       - RATE_LIMIT_MAX=200
-    volumes:
-      - .:/app
+    depends_on:
+      - mongodb
+
 volumes:
-  mongodb_data: {}
+  mongodb_data:
