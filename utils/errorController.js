@@ -57,9 +57,10 @@ const errorController = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
 
-  if (process.env.NODE_ENV === "development") {
+  // Default to development behaviour for any non-production environment
+  if (process.env.NODE_ENV !== "production") {
     sendErrorDev(err, res);
-  } else if (process.env.NODE_ENV === "production") {
+  } else {
     // make a shallow copy but preserve non-enumerable Error properties
     // (Error.message, Error.name, Error.stack are non-enumerable and get lost
     // when using `{ ...err }`). Keep path/value for mongoose CastError too.
