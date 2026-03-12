@@ -1,5 +1,12 @@
 # dts-backend
 
+## 1.1.1
+
+### Patch Changes
+
+- 9c855dd: Updated README.md
+- 9c855dd: Added ci workflow for unit testing on git pull and push
+
 ## 1.1.0
 
 ### Minor Changes
