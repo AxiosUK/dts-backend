@@ -1,6 +1,6 @@
 {
   "name": "dts-backend",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "DTS Backend API for administration and client data.",
   "license": "ISC",
   "author": "Axios UK",

@@ -1,5 +1,11 @@
 # dts-backend
 
+## 1.1.0
+
+### Minor Changes
+
+- 3888897: Implemented Unit Testing
+
 ## 1.0.3
 
 ### Patch Changes
