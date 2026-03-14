@@ -1,4 +1,4 @@
-# dts-backend
+# DTS Backend - API
 
 This repository contains the backend nodejs service for HMCTS DTS Case worker platform.
 
