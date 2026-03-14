@@ -1,5 +1,11 @@
 # dts-backend
 
+## 1.1.2
+
+### Patch Changes
+
+- 1abb361: Update README.md
+
 ## 1.1.1
 
 ### Patch Changes
