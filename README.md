@@ -2,6 +2,20 @@
 
 This repository contains the backend nodejs service for HMCTS DTS Case worker platform.
 
+## This package should be accompanied with the frontend package.
+
+Whole Package
+
+- https://github.com/AxiosUK/hmcts-dts-demo
+
+Frontend
+
+- https://github.com/AxiosUK/dts-frontend
+
+Backend Package
+
+- CURRENT
+
 ## API Summary
 
 This service exposes a small REST API under the versioned path `/main/v1`.
@@ -61,6 +75,9 @@ services:
       - ALLOWED_HOSTS=http://localhost:5173
       - TRUST_PROXY=true
       - RATE_LIMIT_MAX=200
+
+volumes:
+  mongodb_data:
 ```
 
 ## Unit testing
